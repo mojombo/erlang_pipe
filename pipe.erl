@@ -76,12 +76,6 @@ size(Pipe) ->
       
 % util
 
-spaceship(A, B) ->
-  case A =< B of
-    true ->
-      case A < B of
-        true -> -1;
-        false -> 0
-      end;
-    false -> 1
-  end.
+spaceship(A, B) when A < B -> -1;
+spaceship(A, B) when A > B -> 1;
+spaceship(_, _) -> 0.
